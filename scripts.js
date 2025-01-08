@@ -4,14 +4,37 @@ function Book() {
   // the constructor...
   this.title= "";
   this.author= "";
+  this.read = false;
 }
 
-function addBookToLibrary(title,author) {
+function addBookToLibrary(title,author,read = false) {
   // do stuff here
     let book = new Book();
     book.title = title;
     book.author = author
+    book.read = read;
     myLibrary.push(book);
+}
+
+
+function saveBook(event){
+
+  event.preventDefault();
+
+  let author = document.getElementById("author").value;
+  let title = document.getElementById("title").value;
+  let read = document.getElementById("read").checked ;
+
+
+  if(author && title){
+
+    addBookToLibrary(title,author,read);
+    displayLibrary();
+
+    let modal = document.querySelector('dialog');
+    modal.close();
+
+  }
 }
 
 
@@ -44,10 +67,15 @@ function setRead(event){
     books[index].classList.add("read");
     event.target.innerText = "Remove  read"
   }
+
+  myLibrary[index].read = !myLibrary[index].read;
+
 }
 
 function displayLibrary(){
   let library = document.querySelector('.library');
+
+  library.innerHTML="";
 
   for(let i=0; i<myLibrary.length; i++){
 
@@ -86,6 +114,7 @@ function displayLibrary(){
     let readTag = document.createElement("div");
     readTag.classList.add("read-tag");
     readTag.textContent = "READ";
+    if(myLibrary[i].read) content.classList.add("read");
 
 
     btnContainer.appendChild(deleteBtn);

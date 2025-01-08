@@ -143,6 +143,50 @@
     opacity: 1;
   }
 
+  form,
+  form div{
+    display: flex;
+    flex-direction: column;
+  }
+
+  form{
+    gap: 1rem;
+  }
+  dialog{
+    border-radius: 20px;
+    margin: auto;
+    /* gap:1.5rem; */
+  }
+
+  form[method="dialog"]{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  form[method="dialog"] button{
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .read_section{
+    display: block;
+  }
+
+  input[type="checkbox"]{
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+
+  .save_btn{
+    border-radius: 10px;
+    padding: 0.2rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
 
 
 

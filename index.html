@@ -17,10 +17,31 @@
 <body>
     <h1 class="roboto-black">Library App</h1>
     <div class="roboto-italics add-btn" onclick="openModal()">Add Book</div>
-    <dialog>quivole</dialog>
-    <div class="library">
-       
-    </div>
+    <dialog>
+        <form action="" id="book_form">
+            <div>
+                <label for="title">Book Title (required):</label>
+                <input type="text" name="title" id="title" required>
+            </div>
+
+            <div>
+                <label for="author">Author (required):</label>
+                <input type="text" name="author" id="author" required>
+            </div>
+            <div class="read_section">
+                <label for="read">Mark as Read</label>
+                <input type="checkbox" name="read" id="read" >
+            </div>
+
+            <button type="submit" class="save_btn" onclick="saveBook(event)" >Save Book</button>
+        </form>
+
+        <form action="" method="dialog">
+            <button type="submit" aria-label="close" >X</button>
+        </form>
+    </dialog>
+
+    <div class="library"></div>
     
 </body>
 </html>
