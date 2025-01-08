@@ -59,12 +59,18 @@
     cursor: pointer;
   }
 
-  .books_container{
+  .library{
     display: grid;
     grid-template-columns: repeat(auto-fit, 200px);
-    grid-template-rows: repeat(auto-fit,250px);
+    /* grid-template-rows: repeat(auto-fit,250px); */
     padding: 5rem;
     gap:1rem;
+  }
+
+  .book-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .book{
@@ -73,6 +79,9 @@
     background-repeat: no-repeat;
 
     color: black;
+    height: 16rem;
+    position: relative;
+    transition: all 1seg;
   }
 
   .book-info{
@@ -91,5 +100,49 @@
     font-size: 1.6rem;
     line-height: 1.5rem;
   }
+
+  .btns-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btns-container button{
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    width: 5.7rem;
+
+    line-height: 1.2rem;
+
+  }
+
+  .read-tag{
+    background:#0284c7;
+    color:white;
+    border-radius:20px;
+    position: absolute;
+    top:0;
+    right: 0;
+    padding: 0.2rem 1rem;
+    border: 2px solid black;
+    font-weight: bold;
+    transition: all 1s;
+    visibility: hidden;
+
+  }
+
+  .book .read-tag{
+    opacity: 0;
+  }
+
+  .book.read .read-tag{
+    visibility: visible;
+    opacity: 1;
+  }
+
+
 
 
